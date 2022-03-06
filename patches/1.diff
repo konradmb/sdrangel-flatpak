@@ -38,3 +38,12 @@
          }
        ]
      },
+@@ -404,7 +404,7 @@
+         {
+           "type": "git",
+           "url": "git://github.com/EttusResearch/uhd.git",
+-          "commit": "e0e61a5"
++          "branch": "UHD-4.0"
+         },
+         {
+           "type": "patch",
