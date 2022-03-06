@@ -21,6 +21,9 @@ jobs:
       image: bilelmoussaoui/flatpak-github-actions:gnome-40
       options: --privileged
     steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date -Iseconds)"
     - uses: actions/checkout@v3.0.0
       with:
         submodules: 'recursive'
@@ -31,6 +34,8 @@ jobs:
           .flatpak-builder
           /var/lib/flatpak
         key: cache-2
+        restore-keys: |
+          flatpak-build-cache-
     - name: Install dependencies
       run: |
         dnf install -y quilt
@@ -48,7 +53,7 @@ jobs:
         path: |
           .flatpak-builder
           /var/lib/flatpak
-        key: ${{ steps.cache.outputs.primary-key }}
+        key: flatpak-build-cache-${{ steps.date.outputs.date }}
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
