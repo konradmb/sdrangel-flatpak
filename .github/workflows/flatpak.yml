@@ -35,8 +35,8 @@ jobs:
           /var/lib/flatpak
         key: flatpak-build-cache-${{ steps.date.outputs.date }}
         restore-keys: |
+          flatpak-build-cache-v2-
           flatpak-build-cache-2022-03-06T15:59:56+00:00
-          flatpak-build-cache-
     - name: Install dependencies
       run: |
         dnf install -y quilt
@@ -54,7 +54,7 @@ jobs:
         path: |
           .flatpak-builder
           /var/lib/flatpak
-        key: flatpak-build-cache-${{ steps.date.outputs.date }}
+        key: flatpak-build-cache-v2-${{ steps.date.outputs.date }}
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
