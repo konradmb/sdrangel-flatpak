@@ -1,0 +1,3 @@
+[submodule "sdrangel"]
+	path = sdrangel
+	url = https://github.com/f4exb/sdrangel.git
