@@ -36,7 +36,7 @@
          "-DCMAKE_BUILD_TYPE=RELEASE",
 -        "-DRX_SAMPLE_24BIT=ON"
 +        "-DRX_SAMPLE_24BIT=ON",
-+        "-DCMAKE_C_FLAGS=\"-fpermissive\""
++        "-DCMAKE_CXX_FLAGS=\"-fpermissive\""
        ],
        "sources": [
          {
