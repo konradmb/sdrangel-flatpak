@@ -1,0 +1,20 @@
+--- a/sdrangel/flatpak/org.sdrangel.SDRangel.json
++++ b/sdrangel/flatpak/org.sdrangel.SDRangel.json
+@@ -1,7 +1,7 @@
+ {
+   "app-id": "org.sdrangel.SDRangel",
+   "runtime": "org.kde.Platform",
+-  "runtime-version": "5.12",
++  "runtime-version": "5.15-21.08",
+   "sdk": "org.kde.Sdk",
+   "command": "sdrangel",
+   "rename-desktop-file": "sdrangel.desktop",
+@@ -24,7 +24,7 @@
+       "sources": [
+         {
+           "type": "archive",
+-          "url": "https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.bz2",
++          "url": "https://boostorg.jfrog.io/artifactory/main/release/1.71.0/source/boost_1_71_0.tar.bz2",
+           "sha256": "d73a8da01e8bf8c7eda40b4c84915071a8c8a0df4a6734537ddde4a8580524ee"
+         }
+       ],
