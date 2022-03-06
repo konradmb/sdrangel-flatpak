@@ -18,3 +18,14 @@
            "sha256": "d73a8da01e8bf8c7eda40b4c84915071a8c8a0df4a6734537ddde4a8580524ee"
          }
        ],
+@@ -150,8 +150,8 @@
+       "sources": [
+         {
+           "type": "archive",
+-          "url": "https://github.com/opencv/opencv/archive/3.4.6.tar.gz",
+-          "sha256": "e7d311ff97f376b8ee85112e2b536dbf4bdf1233673500175ed7cf21a0089f6d"
++          "url": "https://github.com/opencv/opencv/archive/3.4.16.tar.gz",
++          "sha256": "5e37b791b2fe42ed39b52d9955920b951ee42d5da95f79fbc9765a08ef733399"
+         }
+       ]
+     },
