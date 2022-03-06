@@ -1,15 +1,18 @@
 --- a/sdrangel/flatpak/org.sdrangel.SDRangel.json
 +++ b/sdrangel/flatpak/org.sdrangel.SDRangel.json
-@@ -1,7 +1,7 @@
+@@ -1,8 +1,10 @@
  {
    "app-id": "org.sdrangel.SDRangel",
    "runtime": "org.kde.Platform",
 -  "runtime-version": "5.12",
 +  "runtime-version": "5.15-21.08",
    "sdk": "org.kde.Sdk",
++  "base": "io.qt.qtwebengine.BaseApp",
++  "base-version": "5.15-21.08",
    "command": "sdrangel",
    "rename-desktop-file": "sdrangel.desktop",
-@@ -24,7 +24,7 @@
+   "rename-icon": "sdrangel_icon",
+@@ -24,7 +26,7 @@
        "sources": [
          {
            "type": "archive",
@@ -18,7 +21,7 @@
            "sha256": "d73a8da01e8bf8c7eda40b4c84915071a8c8a0df4a6734537ddde4a8580524ee"
          }
        ],
-@@ -150,8 +150,8 @@
+@@ -150,8 +152,8 @@
        "sources": [
          {
            "type": "archive",
@@ -29,7 +32,7 @@
          }
        ]
      },
-@@ -387,7 +387,7 @@
+@@ -387,7 +389,7 @@
          {
            "type": "git",
            "url": "https://github.com/xtrx-sdr/images.git",
@@ -38,7 +41,7 @@
          }
        ]
      },
-@@ -404,7 +404,7 @@
+@@ -404,7 +406,7 @@
          {
            "type": "git",
            "url": "git://github.com/EttusResearch/uhd.git",
@@ -47,3 +50,34 @@
          },
          {
            "type": "patch",
+@@ -466,20 +468,6 @@
+       ]
+     },
+     {
+-      "name": "soapy_uhd",
+-      "buildsystem": "cmake-ninja",
+-      "config-opts": [
+-        "-Wno-dev"
+-      ],
+-      "sources": [
+-        {
+-          "type": "git",
+-          "url": "https://github.com/pothosware/SoapyUHD.git",
+-          "commit": "2900fff"
+-        }
+-      ]
+-    },
+-    {
+       "name": "soapy_redpitaya",
+       "buildsystem": "cmake-ninja",
+       "config-opts": [
+@@ -500,7 +488,8 @@
+         "-Wno-dev",
+         "-DDEBUG_OUTPUT=ON",
+         "-DCMAKE_BUILD_TYPE=RELEASE",
+-        "-DRX_SAMPLE_24BIT=ON"
++        "-DRX_SAMPLE_24BIT=ON",
++        "-DCMAKE_CXX_FLAGS=\"-fpermissive\""
+       ],
+       "sources": [
+         {
