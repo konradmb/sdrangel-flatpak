@@ -22,7 +22,7 @@ jobs:
       options: --privileged
     steps:
     - uses: martijnhols/actions-cache/restore@v3
-      id: cache
+      id: cachee
       with:
         path: |
           .flatpak-builder
