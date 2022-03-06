@@ -21,7 +21,9 @@ jobs:
       image: bilelmoussaoui/flatpak-github-actions:gnome-40
       options: --privileged
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.0.0
+      with:
+        submodules: 'recursive'
     - name: Install dependencies
       run: |
         dnf install -y quilt
