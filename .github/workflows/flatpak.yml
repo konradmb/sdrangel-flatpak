@@ -61,7 +61,7 @@ jobs:
         path: SDRangel.flatpak
     - name: Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
+      # if: startsWith(github.ref, 'refs/tags/')
       with:
         draft: true
         files: |
