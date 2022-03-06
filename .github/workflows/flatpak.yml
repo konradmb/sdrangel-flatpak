@@ -33,7 +33,7 @@ jobs:
         path: |
           .flatpak-builder
           /var/lib/flatpak
-        key: cache-2
+        key: flatpak-build-cache-${{ steps.date.outputs.date }}
         restore-keys: |
           flatpak-build-cache-
     - name: Install dependencies
