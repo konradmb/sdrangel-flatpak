@@ -29,3 +29,12 @@
          }
        ]
      },
+@@ -387,7 +387,7 @@
+         {
+           "type": "git",
+           "url": "https://github.com/xtrx-sdr/images.git",
+-          "commit": "9586a6e"
++          "commit": "e7c68fa621004ee0d6a65171c786fd9d5a1f2ce6"
+         }
+       ]
+     },
