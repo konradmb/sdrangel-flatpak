@@ -30,3 +30,13 @@
        "name": "soapy_redpitaya",
        "buildsystem": "cmake-ninja",
        "config-opts": [
+@@ -500,7 +488,8 @@
+         "-Wno-dev",
+         "-DDEBUG_OUTPUT=ON",
+         "-DCMAKE_BUILD_TYPE=RELEASE",
+-        "-DRX_SAMPLE_24BIT=ON"
++        "-DRX_SAMPLE_24BIT=ON",
++        "-DCMAKE_C_FLAGS=\"-fpermissive\""
+       ],
+       "sources": [
+         {
