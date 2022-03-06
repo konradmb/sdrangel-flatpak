@@ -21,9 +21,22 @@ jobs:
       image: bilelmoussaoui/flatpak-github-actions:gnome-40
       options: --privileged
     steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date -Iseconds)"
     - uses: actions/checkout@v3.0.0
       with:
         submodules: 'recursive'
+    # - uses: konradmb/actions-cache/restore@v3
+    #   id: cache
+    #   with:
+    #     path: |
+    #       .flatpak-builder
+    #       /var/lib/flatpak
+    #     key: flatpak-build-cache-${{ steps.date.outputs.date }}
+    #     restore-keys: |
+    #       flatpak-build-cache-v2-
+    #       flatpak-build-cache-2022-03-06T15:59:56+00:00
     - name: Install dependencies
       run: |
         dnf install -y quilt
@@ -34,7 +47,22 @@ jobs:
       with:
         bundle: SDRangel.flatpak
         manifest-path: sdrangel/flatpak/org.sdrangel.SDRangel.json
+    # - name: Save to cache
+    #   if: always()
+    #   uses: konradmb/actions-cache/save@v3
+    #   with:
+    #     path: |
+    #       .flatpak-builder
+    #       /var/lib/flatpak
+    #     key: flatpak-build-cache-v2-${{ steps.date.outputs.date }}
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
         path: SDRangel.flatpak
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      # if: startsWith(github.ref, 'refs/tags/')
+      with:
+        draft: true
+        files: |
+          SDRangel.flatpak
