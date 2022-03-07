@@ -71,13 +71,14 @@
        "name": "soapy_redpitaya",
        "buildsystem": "cmake-ninja",
        "config-opts": [
-@@ -500,7 +488,8 @@
+@@ -500,7 +488,9 @@
          "-Wno-dev",
          "-DDEBUG_OUTPUT=ON",
          "-DCMAKE_BUILD_TYPE=RELEASE",
 -        "-DRX_SAMPLE_24BIT=ON"
 +        "-DRX_SAMPLE_24BIT=ON",
-+        "-DCMAKE_CXX_FLAGS=\"-fpermissive\""
++        "-DCMAKE_CXX_FLAGS=\"-fpermissive\"",
++        "-DARCH_OPT=sandybridge"
        ],
        "sources": [
          {
